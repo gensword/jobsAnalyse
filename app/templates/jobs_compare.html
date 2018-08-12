@@ -1,0 +1,211 @@
+{% extends 'base.html' %}
+{% block  container%}
+<div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+        <section class="col-lg-5 connectedSortable ui-sortable">
+
+          <!-- Map box -->
+          <div class="box box-solid bg-light-blue-gradient" style="position: relative; left: 0px; top: 0px;">
+            <div class="box-header ui-sortable-handle" style="cursor: move;">
+              <!-- tools box -->
+              <div class="pull-right box-tools">
+                <button type="button" class="btn bg-primary btn-sm" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn bg-primary btn-sm" data-widget="remove"><i class="fa fa-times"></i>
+                </button>
+              </div>
+              <!-- /. tools -->
+
+              <i class="fa fa-money"></i>
+
+              <h3 class="box-title">
+                薪资对比
+              </h3>
+            </div>
+            <div class="box-body">
+                <img src="data:;base64, {{ plot_url }}" class="img-responsive">
+            </div>
+            <!-- /.box-body-->
+            <div class="box-footer no-border">
+              <div class="row">
+                <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
+                  <div id="sparkline-1"><canvas width="80" height="50" style="display: inline-block; width: 80px; height: 50px; vertical-align: top;"></canvas></div>
+                  <div class="knob-label">Visitors</div>
+                </div>
+                <!-- ./col -->
+                <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
+                  <div id="sparkline-2"><canvas width="80" height="50" style="display: inline-block; width: 80px; height: 50px; vertical-align: top;"></canvas></div>
+                  <div class="knob-label">Online</div>
+                </div>
+                <!-- ./col -->
+                <div class="col-xs-4 text-center">
+                  <div id="sparkline-3"><canvas width="80" height="50" style="display: inline-block; width: 80px; height: 50px; vertical-align: top;"></canvas></div>
+                  <div class="knob-label">Exists</div>
+                </div>
+                <!-- ./col -->
+              </div>
+              <!-- /.row -->
+            </div>
+          </div>
+          <!-- /.box -->
+
+          <!-- solid sales graph -->
+              <div class="box box-solid bg-teal-gradient" style="position: relative; left: 0px; top: 0px;">
+            <div class="box-header" style="cursor: move;">
+              <i class="fa fa-th"></i>
+
+              <h3 class="box-title">工作年限-薪资</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn bg-teal btn-sm" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn bg-teal btn-sm" data-widget="remove"><i class="fa fa-times"></i>
+                </button>
+              </div>
+            </div>
+            <div class="box-body border-radius-none">
+              <div class="chart" id="line-chart" style=" -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+                 <img src="{{ url_for('static', filename='adminlte/dist/img/jobs_exp.png') }}" class="img-responsive">
+                <div class="morris-hover morris-default-style" style="left: 804.031px; top: 65px; display: none;">
+                <div class="morris-hover-row-label">2013 Q2</div>
+                <div class="morris-hover-point" style="color: #efefef">
+  Item 1:
+  8,432
+</div></div></div>
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer no-border">
+              <div class="row">
+                <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
+                  <div style="display:inline;width:60px;height:60px;"><canvas width="120" height="120" style="width: 60px; height: 60px;"></canvas><input type="text" class="knob" data-readonly="true" value="20" data-width="60" data-height="60" data-fgcolor="#39CCCC" readonly="readonly" style="width: 34px; height: 20px; position: absolute; vertical-align: middle; margin-top: 20px; margin-left: -47px; border: 0px; background: none; font: bold 12px Arial; text-align: center; color: rgb(57, 204, 204); padding: 0px; -webkit-appearance: none;"></div>
+
+                  <div class="knob-label">Mail-Orders</div>
+                </div>
+                <!-- ./col -->
+                <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
+                  <div style="display:inline;width:60px;height:60px;"><canvas width="120" height="120" style="width: 60px; height: 60px;"></canvas><input type="text" class="knob" data-readonly="true" value="50" data-width="60" data-height="60" data-fgcolor="#39CCCC" readonly="readonly" style="width: 34px; height: 20px; position: absolute; vertical-align: middle; margin-top: 20px; margin-left: -47px; border: 0px; background: none; font: bold 12px Arial; text-align: center; color: rgb(57, 204, 204); padding: 0px; -webkit-appearance: none;"></div>
+
+                  <div class="knob-label">Online</div>
+                </div>
+                <!-- ./col -->
+                <div class="col-xs-4 text-center">
+                  <div style="display:inline;width:60px;height:60px;"><canvas width="120" height="120" style="width: 60px; height: 60px;"></canvas><input type="text" class="knob" data-readonly="true" value="30" data-width="60" data-height="60" data-fgcolor="#39CCCC" readonly="readonly" style="width: 34px; height: 20px; position: absolute; vertical-align: middle; margin-top: 20px; margin-left: -47px; border: 0px; background: none; font: bold 12px Arial; text-align: center; color: rgb(57, 204, 204); padding: 0px; -webkit-appearance: none;"></div>
+
+                  <div class="knob-label">In-Store</div>
+                </div>
+                <!-- ./col -->
+              </div>
+              <!-- /.row -->
+            </div>
+            <!-- /.box-footer -->
+          </div>
+          <!-- /.box -->
+
+          <!-- Calendar -->
+
+          <!-- /.box -->
+          <div class="box box-solid bg-aqua" style="position: relative; left: 0px; top: 0px;">
+            <div class="box-header" style="cursor: move;">
+              <i class="fa fa-th"></i>
+
+              <h3 class="box-title">学历薪资对比</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn bg-aqua btn-sm" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn bg-aqua btn-sm" data-widget="remove"><i class="fa fa-times"></i>
+                </button>
+              </div>
+            </div>
+            <div class="box-body border-radius-none">
+              <div class="chart" id="line-charts" style=" -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+                 <img src="{{ url_for('static', filename='adminlte/dist/img/jobs_edu.png') }}" class="img-responsive">
+                <div class="morris-hover morris-default-style" style="left: 804.031px; top: 65px; display: none;">
+                <div class="morris-hover-row-label">2013 Q2</div>
+                <div class="morris-hover-point" style="color: #efefef">
+  Item 1:
+  8,432
+</div></div></div>
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer no-border">
+              <div class="row">
+                <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
+                  <div style="display:inline;width:60px;height:60px;"><canvas width="120" height="120" style="width: 60px; height: 60px;"></canvas><input type="text" class="knob" data-readonly="true" value="20" data-width="60" data-height="60" data-fgcolor="#39CCCC" readonly="readonly" style="width: 34px; height: 20px; position: absolute; vertical-align: middle; margin-top: 20px; margin-left: -47px; border: 0px; background: none; font: bold 12px Arial; text-align: center; color: rgb(57, 204, 204); padding: 0px; -webkit-appearance: none;"></div>
+
+                  <div class="knob-label">Mail-Orders</div>
+                </div>
+                <!-- ./col -->
+                <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
+                  <div style="display:inline;width:60px;height:60px;"><canvas width="120" height="120" style="width: 60px; height: 60px;"></canvas><input type="text" class="knob" data-readonly="true" value="50" data-width="60" data-height="60" data-fgcolor="#39CCCC" readonly="readonly" style="width: 34px; height: 20px; position: absolute; vertical-align: middle; margin-top: 20px; margin-left: -47px; border: 0px; background: none; font: bold 12px Arial; text-align: center; color: rgb(57, 204, 204); padding: 0px; -webkit-appearance: none;"></div>
+
+                  <div class="knob-label">Online</div>
+                </div>
+                <!-- ./col -->
+                <div class="col-xs-4 text-center">
+                  <div style="display:inline;width:60px;height:60px;"><canvas width="120" height="120" style="width: 60px; height: 60px;"></canvas><input type="text" class="knob" data-readonly="true" value="30" data-width="60" data-height="60" data-fgcolor="#39CCCC" readonly="readonly" style="width: 34px; height: 20px; position: absolute; vertical-align: middle; margin-top: 20px; margin-left: -47px; border: 0px; background: none; font: bold 12px Arial; text-align: center; color: rgb(57, 204, 204); padding: 0px; -webkit-appearance: none;"></div>
+
+                  <div class="knob-label">In-Store</div>
+                </div>
+                <!-- ./col -->
+              </div>
+              <!-- /.row -->
+            </div>
+            <!-- /.box-footer -->
+          </div>
+          <div class="box box-solid bg-green" style="position: relative; left: 0px; top: 0px;">
+            <div class="box-header" style="cursor: move;">
+              <i class="fa fa-th"></i>
+
+              <h3 class="box-title">城市分布对比</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn bg-success btn-sm" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn bg-success btn-sm" data-widget="remove"><i class="fa fa-times"></i>
+                </button>
+              </div>
+            </div>
+            <div class="box-body border-radius-none">
+              <div class="chart" id="line-chartss" style=" -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+                 <img src="{{ url_for('static', filename='adminlte/dist/img/jobs_city.png') }}" class="img-responsive">
+                <div class="morris-hover morris-default-style" style="left: 804.031px; top: 65px; display: none;">
+                <div class="morris-hover-row-label">2013 Q2</div>
+                <div class="morris-hover-point" style="color: #efefef">
+  Item 1:
+  8,432
+</div></div></div>
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer no-border">
+              <div class="row">
+                <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
+                  <div style="display:inline;width:60px;height:60px;"><canvas width="120" height="120" style="width: 60px; height: 60px;"></canvas><input type="text" class="knob" data-readonly="true" value="20" data-width="60" data-height="60" data-fgcolor="#39CCCC" readonly="readonly" style="width: 34px; height: 20px; position: absolute; vertical-align: middle; margin-top: 20px; margin-left: -47px; border: 0px; background: none; font: bold 12px Arial; text-align: center; color: rgb(57, 204, 204); padding: 0px; -webkit-appearance: none;"></div>
+
+                  <div class="knob-label">Mail-Orders</div>
+                </div>
+                <!-- ./col -->
+                <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
+                  <div style="display:inline;width:60px;height:60px;"><canvas width="120" height="120" style="width: 60px; height: 60px;"></canvas><input type="text" class="knob" data-readonly="true" value="50" data-width="60" data-height="60" data-fgcolor="#39CCCC" readonly="readonly" style="width: 34px; height: 20px; position: absolute; vertical-align: middle; margin-top: 20px; margin-left: -47px; border: 0px; background: none; font: bold 12px Arial; text-align: center; color: rgb(57, 204, 204); padding: 0px; -webkit-appearance: none;"></div>
+
+                  <div class="knob-label">Online</div>
+                </div>
+                <!-- ./col -->
+                <div class="col-xs-4 text-center">
+                  <div style="display:inline;width:60px;height:60px;"><canvas width="120" height="120" style="width: 60px; height: 60px;"></canvas><input type="text" class="knob" data-readonly="true" value="30" data-width="60" data-height="60" data-fgcolor="#39CCCC" readonly="readonly" style="width: 34px; height: 20px; position: absolute; vertical-align: middle; margin-top: 20px; margin-left: -47px; border: 0px; background: none; font: bold 12px Arial; text-align: center; color: rgb(57, 204, 204); padding: 0px; -webkit-appearance: none;"></div>
+
+                  <div class="knob-label">In-Store</div>
+                </div>
+                <!-- ./col -->
+              </div>
+              <!-- /.row -->
+            </div>
+            <!-- /.box-footer -->
+          </div>
+
+        </section>
+    </div>
+    <div class="col-md-1"></div>
+</div>
+{% endblock %}
